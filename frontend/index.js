@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     
         try {
-            const response = await fetch('http://localhost:5500/api/ai/weather', {
+            const response = await fetch('https://weater-ai.netlify.app/api/ai/weather', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
