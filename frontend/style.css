@@ -27,9 +27,7 @@ body {
     padding: 28px 32px;
     overflow: hidden;
     border-radius: 28px;
-    transition: 0.6s ease-out;
-    
-
+    transition: 0.6s ease-out;   
 }
 
 
@@ -461,8 +459,8 @@ body {
 
 .chat-container {
     position: relative;
-    top: 150px;
-    right: 00px;
+    top: 80px;
+    left: 2px;
     width: 600px; /* Slightly wider for more content */
     background-color: #fff;
     border-radius: 10px;
