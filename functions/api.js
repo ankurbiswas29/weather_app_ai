@@ -8,7 +8,7 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 const app = express();
 const port = process.env.PORT || 5500;
 
-app.use(express.static('./frontend'));
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 // console.log(process.env) 
@@ -249,17 +249,19 @@ try {
 }
 };
 
-
+app.use('/api/test', (req,res)=>{
+    res.json("Working")
+})
 app.post('/api/ai/weather', async (req, res) => {
 const userInput = req.body.userInput?.trim();
-console.log(userInput)
+
 if (!userInput) {
     return res.status(400).json({ error: 'Invalid input' });
 }
 
 try {
     const responseText = await generateResponse(userInput);
-    res.json({ response: responseText });
+    res.status(200).json({ response: responseText });
 } catch (error) {
     console.error('Error processing weather query:', error);
     res.status(500).json({ error: 'Internal server error' });

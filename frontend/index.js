@@ -72,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
     chatForm.addEventListener('submit', async (event) => {
         event.preventDefault();
         const userInput = chatInput.value.trim();
-    
         if (!userInput) {
             chatResponse.textContent = 'Please enter a valid query.';
             return;
@@ -94,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
     
             const data = await response.json();
+            console.log(data)
             chatResponse.textContent = data.response;
         } catch (error) {
             console.error('Error:', error);
