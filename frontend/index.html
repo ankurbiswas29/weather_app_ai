@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="search-box">
+            <i class="fas fa-location-dot"></i>
+            <input type="text" placeholder="Enter your location">
+            <button class="fas fa-magnifying-glass"></button>
+        </div>
+
+        <div class="not-found">
+            <img src="images/404.png" alt="Error 404">
+            <p>Oops! Invalid location :/</p>
+        </div>
+
+        <div class="weather-box">
+            <img src="" alt="Weather Icon">
+            <p class="temperature"></p>
+            <p class="description"></p>
+        </div>
+
+        <div class="weather-details">
+            <div class="humidity">
+                <i class="fas fa-water fa-fade"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="wind">
+                <i class="fas fa-wind fa-flip"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+            <div class="pressure">
+                <i class="fas fa-temperature-half fa-bounce"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Pressure</p>
+                </div>
+            </div>
+            <div class="uv-index">
+                <i class="fas fa-sun-plant-wilt fa-beat"></i>
+                <div class="text">
+                    <span></span>
+                    <p>UV Index</p>
+                </div>
+            </div>
+            <div class="visibility">
+                <i class="fas fa-eye fa-fade"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Visibility</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="forecast">
+            <h2>5-Day Forecast</h2>
+            <div class="forecast-details"></div>
+        </div>
+
+        <div id="hourly-forecast-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="hourly-forecast">
+                    <h2>Hourly Forecast</h2>
+                    <div class="hourly-details">
+                        <!-- Hourly forecast details will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="hourly-forecast-btn">Hourly Forecast</button>
+
+    </div>
+
+
+    <div class="weather-map">
+        <button id="toggle-map-btn" class="toggle-map-btn">Toggle Weather Map</button>
+        <div class="map-container"></div>
+    </div>
+
+    
+<!-- Chatbot Container -->
+<div class="chat-container">
+    <div class="chat-header">
+        <h1>Weather Chatbot</h1>
+    </div>
+    <form class="chat-form">
+        <input type="text" placeholder="Ask about the weather..." name="chatbot"/>
+        <button type="submit">Ask</button>
+    </form>
+    <div class="chat-response"></div>
+</div>
+
+    <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+        
+</body>
+
+</html>
+
+
